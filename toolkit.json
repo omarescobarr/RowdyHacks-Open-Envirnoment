@@ -1,0 +1,59 @@
+{
+  "schema_version": 1,
+  "name": "portable-agent-toolkit",
+  "version": "0.3.2",
+  "source_repository": "https://github.com/minh-mhl-le/portable-agent-toolkit",
+  "agents_template": "AGENTS.md",
+  "skills": [
+    {
+      "name": "build-from-plan",
+      "source": "skills/build-from-plan",
+      "target": ".agents/skills/build-from-plan",
+      "role": "core"
+    },
+    {
+      "name": "discovery",
+      "source": "skills/discovery",
+      "target": ".agents/skills/discovery",
+      "role": "core"
+    },
+    {
+      "name": "grilling",
+      "source": "skills/grilling",
+      "target": ".agents/skills/grilling",
+      "role": "core"
+    },
+    {
+      "name": "show-me",
+      "source": "skills/show-me",
+      "target": ".agents/skills/show-me",
+      "role": "core"
+    },
+    {
+      "name": "writing-session",
+      "source": "skills/writing-session",
+      "target": ".agents/skills/writing-session",
+      "role": "core"
+    },
+    {
+      "name": "workspace-onboarding",
+      "source": "skills/workspace-onboarding",
+      "target": ".agents/skills/workspace-onboarding",
+      "role": "onboarding"
+    }
+  ],
+  "workspace": {
+    "state_directory": ".agent-toolkit",
+    "inventory": ".agent-toolkit/inventory.json",
+    "skills_directory": ".agents/skills"
+  },
+  "optional_components": {
+    "x_discovery": {
+      "source": "overlay",
+      "config_example": "config/x-discovery.toml.example",
+      "doctor_command": "doctor-x",
+      "setup_command": "setup-x",
+      "platforms": ["darwin", "linux"]
+    }
+  }
+}
